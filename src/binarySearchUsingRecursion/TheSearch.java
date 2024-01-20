@@ -25,7 +25,7 @@ public class TheSearch {
     }
 
     public static int recursiveBinSearch(int[] box, int st, int end, int token){
-        System.out.println("[ "+st+"..."+(st + end) / 2+"..."+end+" ]");//see bigOlogN work its magic....
+        System.out.println("[ "+st+"..."+(st + end) / 2+"..."+end+" ]");
         if(st>end){
             return -1;
         }else {
@@ -39,4 +39,4 @@ public class TheSearch {
             }
         }
     }
-}
+}//see bigOlogN work its magic....
