@@ -3,8 +3,8 @@ package mergeSort;
 public class mergeSortIt {
     public static void main(String[] args) {
         //int [] inputArray = {12,27,4,41,13,19,58,72,12,13,68,41};
-        //int [] inputArray = {3,5,1,7,4};
-        int [] inputArray = {7,4};
+        int [] inputArray = {3,5,1,7,4,2};
+        //int [] inputArray = {7,4};
         sort(inputArray,0, inputArray.length-1);
         for (int i=0; i<inputArray.length; i++){
             System.out.print(inputArray[i]+"  ");
@@ -27,7 +27,7 @@ public class mergeSortIt {
             int rgtArrIndx = mid+1;//...as subarrays of inArray
             int k = 0;
 
-            while(lftArrIndx<=mid && rgtArrIndx<=end){
+            while(lftArrIndx<=mid && rgtArrIndx<=end){//ie
                 if (inArray[lftArrIndx]>=inArray[rgtArrIndx]){
                     tempArray[k]=inArray[rgtArrIndx];
                     rgtArrIndx++;
