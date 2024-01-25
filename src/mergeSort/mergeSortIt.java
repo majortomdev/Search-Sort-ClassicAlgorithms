@@ -20,39 +20,39 @@ public class mergeSortIt {
         merge(inputArray,st, mid, end);
     }
 
-    private static void merge(int[] inArray, int start, int mid, int end){
+    private static void merge(int[] arr, int start, int mid, int end){
             int[] tempArray = new int [end-start +1];
 
-            int lftArrIndx = start;//im going to make up my two arrays on each pass thru
-            int rgtArrIndx = mid+1;//...as subarrays of inArray
+            int left = start;//im going to make up my two arrays on each pass thru
+            int right = mid+1;//...as subarrays of inArray
             int k = 0;
 
-            while(lftArrIndx<=mid && rgtArrIndx<=end){//ie
-                if (inArray[lftArrIndx]>=inArray[rgtArrIndx]){
-                    tempArray[k]=inArray[rgtArrIndx];
-                    rgtArrIndx++;
+            while(left<=mid && right<=end){//ie
+                if (arr[left]>=arr[right]){
+                    tempArray[k]=arr[right];
+                    right++;
                 }else {
-                    tempArray[k]=inArray[lftArrIndx];
-                    lftArrIndx++;
+                    tempArray[k]=arr[left];
+                    left++;
                 }
                 k++;
             }//this ifelse just tidies up when only 1 subarray left
-            if (lftArrIndx<=mid){
-                while (lftArrIndx<=mid){
-                    tempArray[k]=inArray[lftArrIndx];
+            if (left<=mid){
+                while (left<=mid){
+                    tempArray[k]=arr[left];
                     k++;
-                    lftArrIndx++;
+                    left++;
                 }
-            } else if (rgtArrIndx<=end) {
-                while (rgtArrIndx<=end){
-                    tempArray[k]=inArray[rgtArrIndx];
-                    rgtArrIndx++;
+            } else if (right<=end) {
+                while (right<=end){
+                    tempArray[k]=arr[right];
+                    right++;
                     k++;
                 }
             }
             //inArray=tempArray;
         for (int i=0; i<tempArray.length; i++){
-            inArray[start+i]= tempArray[i];
+            arr[start+i]= tempArray[i];
         }
     }
 
